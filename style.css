@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-color: cornflowerblue;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-self: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.block {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    height: 10vh;
+}
+
+.timer {
+    flex: 75%;
+}
+.title {
+    flex: 15%;
+    font-size: large;
+}
