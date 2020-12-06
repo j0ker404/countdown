@@ -1,3 +1,12 @@
+function numDigits(num) {
+    let digits = 0;
+    while(num > 0 ) {
+        num = Math.round(num / 10);
+        digits++;
+    }
+    console.log(digits);
+    return digits;   
+} 
 
 class InputState {
 
@@ -5,11 +14,10 @@ class InputState {
         this.input = input;
         this.currVal = this.input.innerHTML;
         this.prevVal = 0;
-
-        this.input.addEventListener('input', this.update);
+        this.input.addEventListener('input', this.updateInput);
     }
-
-    update(e) {
+    
+    updateInput(e) {
         // console.log(e.target.value);
         this.currVal = e.target.value;
         
@@ -21,8 +29,11 @@ class InputState {
             this.prevVal = this.currVal;
         }
         // from this point this.currVal is always a number
-        console.log(this.currVal);
+        // console.log(this.currVal);
+        let numDigit = numDigits(this.currVal);
+        console.log(`numDigits:${numDigit}`); 
     }
+
 }
 
 
