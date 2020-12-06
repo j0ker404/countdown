@@ -16,12 +16,12 @@ class InputState {
         // check if input is a number 
         if (isNaN(this.currVal)) {
             e.target.value = this.prevVal; 
+            this.currVal = e.target.value;
         } else {
             this.prevVal = this.currVal;
         }
         // from this point this.currVal is always a number
-        // console.log(this.currVal);
-        console.log(this.input);
+        console.log(this.currVal);
     }
 }
 
