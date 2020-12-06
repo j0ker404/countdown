@@ -81,3 +81,17 @@ html {
 .menu > button:hover {
     background-color: rgb(47, 241, 80);
 }
+
+.input-time {
+    text-align: right;
+    font-family:'Roboto',sans-serif;
+    font-size: 2em;
+    font-weight: 400;
+    width: 75%;
+    border: none;
+    background-color: cornflowerblue;
+
+    border-bottom: 1px;
+    border-bottom-style: solid;
+    border-color: black;
+}
