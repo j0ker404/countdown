@@ -26,4 +26,5 @@ function updateInput(e) {
     // 00h 00m 00s
     time = updateTime(currVal);
     console.log(time);
+    console.log(timeFormat(time));
 }
