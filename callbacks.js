@@ -65,7 +65,7 @@ function updateInputWithFormat(e) {
     // get the time split into blocks(sec,min,hour)
     time = updateTime(currVal);
     // console.log(time);
-    // console.log(timeFormat(time));
+    
     
     // display the formated time as the user types
     // 00h 00m 00s
@@ -89,4 +89,14 @@ function updateFormat(e) {
     formatResults.innerHTML = timeFormat(time);
     e.target.value = timeFormat(time);
     // console.log();
+}
+
+
+function startStopHandler(e) {
+    console.log('startStopHandler');
+}
+
+
+function restartHandler(e) {
+    console.log('restart Handler');
 }
