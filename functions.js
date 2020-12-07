@@ -32,28 +32,29 @@ function updateTime(num) {
 
 // return formated string
 function format(hour, min, sec)  {
-    return hour+"h" + "\t" + min+"m" + "\t" + sec+"s";
+    return hour+"h" + " " + min+"m" + " " + sec+"s";
 }
 
 // create formatted time blocks
 let timeFormat = function(arr) {
     if (arr.length === 3 ) {
-        let hour = arr.pop();
-        let min = arr.pop();
-        let sec = arr.pop();
+        let hour = arr[2];
+        let min = arr[1];
+        let sec = arr[0];
         return format(hour, min, sec);
     } else if (arr.length == 2) {
         let hour = 00;
-        let min = arr.pop();
-        let sec = arr.pop();
+        let min = arr[1];
+        let sec = arr[0];
         return format(hour, min, sec);
     } else if (arr.length == 1) {
         let hour = 00;
         let min = 00;
-        let sec = arr.pop();
+        let sec = arr[0];
         return format(hour, min, sec);
     } else {
-        return format(0, 0, 0);
+        // return format(0, 0, 0);
+        return "0s";
     }
 }
 

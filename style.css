@@ -25,9 +25,11 @@ html {
     height: 50%;
     /* width: 100%; */
     justify-content: space-around;
+    /* justify-content: center; */
     /* align-self: center; */
     align-items: flex-end;
     width: 70%;
+    /* flex-direction: column; */
 }
 .menu {
     display: flex;
@@ -83,7 +85,7 @@ html {
 }
 
 .input-time {
-    text-align: right;
+    text-align: center;
     font-family:'Roboto',sans-serif;
     font-size: 2em;
     font-weight: 400;
