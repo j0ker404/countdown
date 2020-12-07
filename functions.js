@@ -1,11 +1,11 @@
 // functions
 
+// callback function for input
 function updateInput(e) {
     // console.log(`temp:${temp}`);
     currVal = e.target.value;
 
     if (!isNaN(currVal)) {
-        // console.log('yo mama');
         if (currVal < 1000000) {
             prevVal = currVal;
         } else {
@@ -19,7 +19,7 @@ function updateInput(e) {
         currVal = e.target.value;
     }
 
-    // from this point this.currVal is always a number
+    // from this point currVal is always a number
     currVal = Math.floor(currVal);
     e.target.value = currVal;
     console.log(currVal);
@@ -41,6 +41,7 @@ function numDigits(num) {
     return digits;
 }
 
+// splits a number into array parts 
 function updateTime(num) {
     // console.log('test');
     let temp = 0;
