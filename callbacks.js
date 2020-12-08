@@ -63,7 +63,7 @@ function updateInputWithFormat(e) {
     // console.log(`currVal=${currVal}`);
 
     // get the time split into blocks(sec,min,hour)
-    time = updateTime(currVal);
+    time = updateTimeFormat(currVal);
     // console.log(time);
     
     
@@ -81,7 +81,7 @@ function updateInputWithFormat(e) {
 // debug function-update format of time
 function updateFormat(e) {
     console.log('updateFormat starting');
-    time = updateTime(currVal);
+    time = updateTimeFormat(currVal);
     console.log(`currVal=${currVal}`);
     console.log(`time=${time}`);
     // console.log(timeFormat(time));
@@ -94,6 +94,22 @@ function updateFormat(e) {
 
 function startStopHandler(e) {
     console.log('startStopHandler');
+    
+    // determin btn state
+    if (!startStop[1]) {
+        // stop state
+        clearInterval(startStop[2]);
+        input.value = "stopped"
+    } else {
+        // start state
+        updateTime(input, currVal, prevVal, time, startStop);
+        // startStop[3] = setInterval(updateTime(input, currVal, prevVal, time),500);
+    }
+    
+    // update btn lable
+    startStop[1] ? startStop[0].innerHTML="stop": startStop[0].innerHTML="start";
+    startStop[1] = !startStop[1];
+
 }
 
 

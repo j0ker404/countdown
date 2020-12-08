@@ -1,6 +1,7 @@
 
 let input = document.querySelector("input");
-let startStop =  document.getElementById("start-stop");
+let startStop =  [document.getElementById("start-stop"), true,undefined];
+// startStop = [element, btnLabel boolean, id of timer]
 let restart =  document.getElementById("restart");
 
 let formatResults = document.getElementById("time-format");
@@ -16,5 +17,5 @@ let time = [];
 input.addEventListener("input", updateInputWithFormat);
 // input.addEventListener("keyup", updateFormat);
 
-startStop.addEventListener("click", startStopHandler);
+startStop[0].addEventListener("click", startStopHandler);
 restart.addEventListener("click", restartHandler);

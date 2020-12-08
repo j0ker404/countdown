@@ -13,7 +13,7 @@ function numDigits(num) {
 }
 
 // splits a number into array parts 
-function updateTime(num) {
+function updateTimeFormat(num) {
     // console.log('test');
     let temp = 0;
     let n = num;
@@ -58,3 +58,10 @@ let timeFormat = function(arr) {
     }
 }
 
+
+function updateTime(input, cur, prev, time,startStop) {
+    // input.value=Math.floor(Math.random()*10);
+    startStop[2]=setInterval(()=> {
+        input.value=Math.floor(Math.random()*10);
+    },1000);
+}
