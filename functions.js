@@ -28,7 +28,7 @@ function updateTimeFormat(num) {
     while (arr.length < 3) {
         arr.push(0);
     }
-    console.log(arr);
+    // console.log(arr);
     return arr;
 }
 
