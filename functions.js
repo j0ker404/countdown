@@ -61,6 +61,7 @@ let timeFormat = function(arr) {
 
 function updateTime(input, cur, prev, time,startStop) {
     // input.value=Math.floor(Math.random()*10);
+    // update time every 1s(1000ms)
     startStop[2]=setInterval(()=> {
         input.value=Math.floor(Math.random()*10);
     },1000);
