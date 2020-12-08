@@ -7,4 +7,6 @@
 - [ ] start countdown, use Date api   
 - [ ] stop countdown  
 - [ ] add restart feature 
-- [ ] stop cursor jump with input 
+- [ ] stop cursor jump with input
+
+- [ ] Fix bug with input where '0' gets ignored when when subbing in sum 0:60:60
