@@ -46,7 +46,7 @@ function updateInputWithFormat(e) {
         numb = Math.floor(Number(numb.join("")));
         currVal = numb;
         // set max limit on time inputted
-        if (currVal < 1000000) {
+        if (currVal <= 995959) {
             prevVal = currVal;
         } else {
             currVal = prevVal;
@@ -78,17 +78,12 @@ function updateInputWithFormat(e) {
 
 }
 
-// debug function-update format of time
+// update format of time after input lost focus
 function updateFormat(e) {
-    console.log('updateFormat starting');
-    time = updateTimeFormat(currVal);
-    console.log(`currVal=${currVal}`);
-    console.log(`time=${time}`);
-    // console.log(timeFormat(time));
-    // e.target.value = timeFormat(time);
-    formatResults.innerHTML = timeFormat(time);
+    // console.log('updateFormat starting');
+    // format time
+    format(time);
     e.target.value = timeFormat(time);
-    // console.log();
 }
 
 

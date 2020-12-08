@@ -15,6 +15,7 @@ let time = [];
 // add event listeners
 
 input.addEventListener("input", updateInputWithFormat);
+input.addEventListener("change", updateFormat);
 // input.addEventListener("keyup", updateFormat);
 
 startStop[0].addEventListener("click", startStopHandler);
