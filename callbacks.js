@@ -58,15 +58,16 @@ function updateInputWithFormat(e) {
         currVal = e.target.value;
     }
     currVal = Math.floor(currVal);
-
     // console.log(`numb=${numb}`);
-    // console.log(`currVal=${currVal}`);
-
+    
     // get the time split into blocks(sec,min,hour)
     time = updateTimeFormat(currVal);
-    // console.log(time);
-    
-    
+    console.log('--------------');
+    console.log(`currVal=${currVal}`);
+    console.log(`time=${time}`);
+    console.log(`time2num=${time2num(time)}`);
+    console.log(`time_cov=${updateTimeFormat(time2num(time))}`);
+    console.log('--------------');
     // display the formated time as the user types
     // 00h 00m 00s
     // set the formatted time as value of input
