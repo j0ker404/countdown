@@ -108,7 +108,13 @@ function startStopHandler(e) {
     }
 }
 
-
+// restart countdown back to 0
 function restartHandler(e) {
     console.log('restart Handler');
+    timeStop(startStop);
+    prevVal = 0;
+    currVal = 0;
+    time = [0,0,0];
+    input.value = timeFormat(time);
+    updateStartStopBtnLabel(startStop);
 }
