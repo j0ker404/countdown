@@ -62,12 +62,12 @@ function updateInputWithFormat(e) {
     
     // get the time split into blocks(sec,min,hour)
     time = updateTimeFormat(currVal);
-    console.log('--------------');
-    console.log(`currVal=${currVal}`);
-    console.log(`time=${time}`);
-    console.log(`time2num=${time2num(time)}`);
-    console.log(`time_cov=${updateTimeFormat(time2num(time))}`);
-    console.log('--------------');
+    // console.log('--------------');
+    // console.log(`currVal=${currVal}`);
+    // console.log(`time=${time}`);
+    // console.log(`time2num=${time2num(time)}`);
+    // console.log(`time_cov=${updateTimeFormat(time2num(time))}`);
+    // console.log('--------------');
     // display the formated time as the user types
     // 00h 00m 00s
     // set the formatted time as value of input
@@ -90,22 +90,22 @@ function updateFormat(e) {
 
 function startStopHandler(e) {
     console.log('startStopHandler');
-    
+    console.log(`time=${time}`);
+    console.log(`time2num=${time2num(time)}`);
     // determin btn state
     if (!startStop[1]) {
         // stop state
-        clearInterval(startStop[2]);
-        input.value = "stopped"
+        timeStop(startStop);
+        // update btn lable
+        updateStartStopBtnLabel(startStop);
     } else {
         // start state
-        updateTime(input, currVal, prevVal, time, startStop);
-        // startStop[3] = setInterval(updateTime(input, currVal, prevVal, time),500);
+        if (time2num(time) > 0) {
+            updateTime(input, currVal, prevVal, time, startStop);
+            // update btn lable
+            updateStartStopBtnLabel(startStop);
+        }
     }
-    
-    // update btn lable
-    startStop[1] ? startStop[0].innerHTML="stop": startStop[0].innerHTML="start";
-    startStop[1] = !startStop[1];
-
 }
 
 
