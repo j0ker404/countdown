@@ -29,6 +29,7 @@ function updateTimeFormat(num) {
         arr.push(0);
     }
     // console.log(arr);
+    // arr = 00s 00m 00h
     return arr;
 }
 
@@ -101,4 +102,21 @@ function updateTime(input, cur, prev, time,startStop) {
     startStop[2]=setInterval(()=> {
         input.value=Math.floor(Math.random()*10);
     },1000);
+}
+
+// converts time array: AAs BBm CCh to number: AABBCC  
+function time2num(time) {
+    stack = new Stack();
+
+    let temp = "";
+    time.forEach(el => {
+        stack.push(el);
+        // temp = temp + el + "";
+    });
+    while (stack.getSize() !=0) {
+        temp += stack.pop();
+    }
+    // console.log(`temp=${temp}`);
+    let num = Number(temp);
+    return num;
 }
