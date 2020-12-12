@@ -100,7 +100,64 @@ function updateTime(input, cur, prev, time,startStop) {
     // input.value=Math.floor(Math.random()*10);
     // update time every 1s(1000ms)
     startStop[2]=setInterval(()=> {
-        input.value=Math.floor(Math.random()*10);
+        console.log(time);
+        sec = time[0]
+        min = time[1]
+        hour = time[2]
+        
+        // subtract one second
+        sec -= 1;
+        // update time accordingly
+        if (hour > 0) {
+            if (sec === -1) {
+                sec = 59;
+                min -= 1; 
+            }
+    
+            if (min === -1) {
+                min = 59;
+                hour -= 1;
+            }
+    
+            if (hour === -1) {
+                hour = 0;
+            }
+        } 
+        else {
+            if (min > 0) {
+                if (sec === -1) {
+                    sec = 59;
+                    min -= 1; 
+                }
+        
+                if (min === -1) {
+                    min = 0;
+                }  
+            }
+            else {
+                if (sec === -1) {
+                    sec = 0;
+                }
+            }
+        }
+        
+        time[0] = sec;
+        time[1] = min;
+        time[2] = hour;
+
+        prev = cur;
+        cur = time2num(time);
+
+        // input.value=Math.floor(Math.random()*10);
+        // update time on counter with formated time
+        input.value=timeFormat(time);
+
+        if (time2num(time)===0) {
+            // startStop[1] = !startStop[1];
+            // timeStop(input, startStop);
+            timeStop(startStop);
+            updateStartStopBtnLabel(startStop);
+        }
     },1000);
 }
 
@@ -119,4 +176,16 @@ function time2num(time) {
     // console.log(`temp=${temp}`);
     let num = Number(temp);
     return num;
+}
+
+// stop timer count down
+function timeStop(startStop) {
+    clearInterval(startStop[2]);
+    // input.value = "stopped";
+}
+
+// update start/stop btn label
+function updateStartStopBtnLabel(startStop) {
+    startStop[1] ? startStop[0].innerHTML="stop": startStop[0].innerHTML="start";
+    startStop[1] = !startStop[1];
 }
