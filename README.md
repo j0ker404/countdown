@@ -7,7 +7,7 @@
 - [x] Add callback for RESTART button 
 - [x] start countdown    
 - [x] stop countdown  
-- [ ] add restart feature 
+- [x] add restart feature 
 
 (Date api not used instead interval() callback used)  
 

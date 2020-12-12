@@ -89,9 +89,9 @@ function updateFormat(e) {
 
 
 function startStopHandler(e) {
-    console.log('startStopHandler');
-    console.log(`time=${time}`);
-    console.log(`time2num=${time2num(time)}`);
+    // console.log('startStopHandler');
+    // console.log(`time=${time}`);
+    // console.log(`time2num=${time2num(time)}`);
     // determin btn state
     if (!startStop[1]) {
         // stop state
@@ -110,7 +110,7 @@ function startStopHandler(e) {
 
 // restart countdown back to 0
 function restartHandler(e) {
-    console.log('restart Handler');
+    // console.log('restart Handler');
     timeStop(startStop);
     prevVal = 0;
     currVal = 0;
